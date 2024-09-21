@@ -1,76 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sitio Web Imagen Escrita</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Sitio Web Imagen Escrita</title>
+    <style>
+        .title {
+            text-align: center; /* Centra el texto */
+        }
+
+        .content {
+            text-align: center; /* Centra el texto dentro del contenedor */
+            margin: 20px; /* Añade un poco de espacio alrededor */
+        }
+
+        button {
+            margin-top: 10px; /* Espaciado superior del botón */
+        }
+
+        #right {
+            margin-top: 20px; /* Espacio entre el contenido y el lado derecho */
+        }
+    </style>
 </head>
 
 <body>
     <!-- Contenedor principal -->
     <main>
-
-        <!-- Título principal -->
         <div class="title">
             <h1>Proyectos y trabajos IE 2024</h1>
         </div>
-
-        <!-- Contenedor lado izquierdo de la página -->
-        <div id="left">
-
-            <!-- Contenedor párrafos + botón -->
-            <div class="content">
-
-                <!-- párrafo -->
-                <p>Este curso se centra en la intersección entre diseño, programación y arte generativo. Utilizando
-                    p5.js
-                    como
-                    herramienta principal, el curso explora los fundamentos de la programación creativa y su aplicación
-                    en
-                    el
-                    diseño
-                    visual interactivo.</p>
-
-                <p>A través del creative coding se hace énfasis en el pensamiento computacional como herramienta de
-                    diseño,
-                    fomentando un
-                    enfoque innovador en la resolución de problemas visuales y la creación artística. La integración de
-                    herramientas de IA
-                    busca ampliar las posibilidades creativas y técnicas, sirviendo como complemento al proceso de
-                    diseño y
-                    programación</p>
-
-                <!-- botón -->
-                <a href="https://enlace-a-la-wiki.com" target="_blank">
-                    <button>Ver proyecto en la wiki</button>
-                </a>
-
-            </div>
+    
+        <!-- Contenedor párrafos + botón -->
+        <div class="content">
+            <p>Proyectos realizados en Imagen Escrita, utilizando códigos de interfaces en la plataforma de p5.js.</p>
+            <a href="https://wiki.ead.pucv.cl/Imagen_Escrita_2024" target="_blank">
+                <button>Ver los proyectos más a fondo</button>
+            </a>
         </div>
+    </main>
+    
 
         <!-- Contenedor lado derecho de la página -->
         <div id="right">
-
-            <!--Contenedor proyectos-->
+            <!-- Contenedor proyectos -->
             <div class="proyectos">
-
                 <nav>
-
-                    <!--imagenes con enlace a sketch-->
+                    <!-- Imágenes con enlace a sketch -->
                     <a href="Proyectos/Tarea 1/index.html" target="_blank">
-                        <img src="t1/t01.jpg" alt="Tarea 1"> 
-                        <a href="" target="_blank">
+                        <img src="t1/t01.jpg" alt="Patrones circulares">
                     </a>
+                    <a href="Proyectos/Tarea 2/index.html" target="_blank">
+                        <img src="" alt="Círculos rebotando">
+                    </a>
+                    <a href="Proyectos/Tarea 3/index.html" target="_blank">
+                        <img src="" alt="Transformación de estrella">
+                    </a>
+                    <a href="Proyectos/Tarea 4/index.html" target="_blank">
+                        <img src="" alt="Túnel circular">
+                    </a>
+                    
                 </nav>
-
             </div>
-
         </div>
-
     </main>
-
 </body>
 
 </html>
+
