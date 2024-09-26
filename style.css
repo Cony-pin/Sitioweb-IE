@@ -54,7 +54,7 @@ p {
 
 .proyectos { 
     display: grid; 
-    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
     column-gap: 30px; 
     row-gap: 40px; 
     height: 400px; 
@@ -72,14 +72,17 @@ p {
 .proyectos nav a img { 
         width: 100%; /* O un tamaño específico, como 300px */
         max-width: 300px; /* Asegúrate de que no sobrepase el contenedor */
-        border-radius: 20px; 
+        border-radius: 50%; 
         margin-bottom: 1ex; 
         border: 3px solid transparent; 
 }
 
 .proyectos nav a:hover img { 
-    filter: blur(5px); 
-    opacity: 90%; 
+    transform: scale(1.05); /* Aumenta un poco el tamaño de la imagen */
+    opacity: 0.9; /* Ligera reducción de opacidad */
+    border: 3px solid #3f3f3f; /* Cambia el color del borde al pasar el mouse */
+
+
 }
 
 button { 
