@@ -1,122 +1,125 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
-*, html { 
-    box-sizing: border-box; 
-    font-family: 'Oswald', sans-serif; 
+*, html {
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
 }
 
-html, body { 
-    margin: 0; 
-    padding: 0; 
-    background-color: #f6f3fc; /* Fondo claro */
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #f6f3fc;
 }
 
 main {
     display: flex;
-    flex-direction: column; /* Para alinear elementos en columna */
-    align-items: center; /* Centra horizontalmente */
-    margin: 0 auto; /* Asegura que el contenedor esté centrado en la página */
-    padding: 20px; /* Añade un poco de espacio alrededor */
-    grid-template-areas: 
-        "title title"    
-        "contenido proyectos"; /* Ahora 'contenido' y 'proyectos' en la segunda fila */
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
 }
 
-.title { 
-    grid-area: title; 
-    padding-left: 30px; 
-    text-align: center; /* Centrar el título */
+.title {
+    text-align: center;
+    padding: 30px;
 }
 
-.content { 
-    grid-area: contenido; /* Asegúrate de que el contenedor de párrafos esté aquí */
-    padding: 0; 
-    text-align: justify; 
-    word-break: normal; 
-    padding-left: 30px; /* Añado padding para consistencia */
+.content {
+    text-align: justify;
+    padding: 0 30px;
 }
 
-#right { 
-    padding: 50px; 
-    padding-top: 0; 
-    grid-area: proyectos; 
+#right {
+    width: 100%;
+    margin-top: 20px;
 }
 
-h1 { 
-    font-size: 5em; 
-    font-weight: bold; 
-    color: #3f3f3f; 
+h1 {
+    font-size: 5em;
+    font-weight: bold;
+    color: #3f3f3f;
 }
 
-p { 
-    font-size: 25px; 
+p {
+    font-size: 25px;
 }
 
-.proyectos { 
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1fr 1fr; 
-    column-gap: 30px; 
-    row-gap: 40px; 
-    height: 400px; 
-    overflow-y: auto; 
+/* Contenedor de las imágenes en una fila */
+.proyectos {
+    display: flex; /* Establece las imágenes en una fila */
+    gap: 30px; /* Espacio entre las imágenes */
+    overflow-x: auto; /* Activa el desplazamiento horizontal */
+    padding: 20px;
+    scroll-snap-type: x mandatory; /* Hace que las imágenes se alineen correctamente al hacer scroll */
+    justify-content: flex-start; /* Alinea las imágenes a la izquierda */
 }
 
-.proyectos nav { 
-    display: contents; 
+.proyectos a {
+    display: block;
+    position: relative;
+    width: 300px; /* Ancho de cada imagen */
+    height: 300px; /* Alto de cada imagen */
+    overflow: hidden;
 }
 
-.proyectos a { 
-    display: block; 
+.proyectos a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+    transition: opacity 0.3s ease;
 }
 
-.proyectos nav a img { 
-        width: 100%; /* O un tamaño específico, como 300px */
-        max-width: 300px; /* Asegúrate de que no sobrepase el contenedor */
-        border-radius: 50%; 
-        margin-bottom: 1ex; 
-        border: 3px solid transparent; 
+.proyectos a:hover img {
+    opacity: 0.3; /* Reduce opacidad al pasar el mouse */
 }
 
-.proyectos nav a:hover img { 
-    transform: scale(1.05); /* Aumenta un poco el tamaño de la imagen */
-    opacity: 0.9; /* Ligera reducción de opacidad */
-    border: 3px solid #3f3f3f; /* Cambia el color del borde al pasar el mouse */
-
-
+.proyectos a .caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
 }
 
-button { 
-    border-radius: 20px; 
-    padding: 10px 20px; 
-    background-color: rgb(230, 230, 230); 
-    font-size: 14px; 
-    font-weight: bold; 
-    color: #3f3f3f; 
-    border: none; 
-    cursor: pointer; 
+.proyectos a:hover .caption {
+    opacity: 1; /* Muestra el título al pasar el mouse */
 }
 
-button:hover { 
-    background-color: #3f3f3f; 
-    color: black; 
-    font-weight: bold; 
+button {
+    border-radius: 20px;
+    padding: 10px 20px;
+    background-color: rgb(230, 230, 230);
+    font-size: 14px;
+    font-weight: bold;
+    color: #3f3f3f;
+    border: none;
+    cursor: pointer;
 }
 
-@media (max-width: 900px) { 
-    main { 
-        display: grid; 
-        grid-template-columns: 1fr; 
-        grid-template-rows: auto auto auto; 
-        grid-template-areas: 
-            "title" 
-            "contenido" 
-            "proyectos"; 
-        margin: 0 10px; 
+button:hover {
+    background-color: #3f3f3f;
+    color: black;
+    font-weight: bold;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 900px) {
+    h1 {
+        font-size: 3em;
     }
-    
-    h1 { 
-        font-size: 3em; 
-    }
 }
+
+
 
 
